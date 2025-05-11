@@ -8,6 +8,10 @@ const { validateSignInInput, validateSignUpInput } = sesionUsersSchema();
 
 export class usersController {
 
+  static async serverRunning(req, res) {
+    res.json({server: "Server running"})
+  }
+
   static async getAllUsers(req, res) {
     try {
       const users = await usersModel.getAllUsers();

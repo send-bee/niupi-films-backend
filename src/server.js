@@ -13,6 +13,8 @@ app.use(cors(corsObject));
 app.use(express.json());
 app.use(cookieParser());
 
+app.use("/", fmoviesRouter)
+
 app.use("/portal-users", usersRouter);
 
 // app.use(jwtMiddleware);

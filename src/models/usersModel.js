@@ -9,6 +9,13 @@ const config = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME
 }
+const configgg = {
+  host: "localhost",
+  user: "root",
+  port: 3306,
+  password: "1234567890",
+  database: process.env.DB_NAME
+}
 
 const pool = await mysql.createConnection(config)
 
