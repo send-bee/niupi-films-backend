@@ -7,6 +7,7 @@ import {
   createPelicula,
   deletePelicula,
   getPeliculaPorId,
+  getPeliculasPorIds,
   buscarPeliculaPorTitulo,
   getPeliculasPorFiltro
 } from "../controllers/peliculacontroller.js"
@@ -39,4 +40,5 @@ peliculaRouter.get('/genero/:genre', getPeliculasPorGenero); // Obtener películ
 peliculaRouter.get('/filtro', getPeliculasPorFiltro); // Obtener películas con filtros como género, año, rating, etc.
 peliculaRouter.get('/:id', getPeliculaPorId); // Obtener una película por su ID
 peliculaRouter.post('/', createPelicula); // Crear una nueva película
+peliculaRouter.post('/ids', getPeliculasPorIds); // Crear una nueva película
 peliculaRouter.delete('/:id', deletePelicula); // Eliminar una película por su ID

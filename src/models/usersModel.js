@@ -17,7 +17,7 @@ const configgg = {
   database: process.env.DB_NAME
 }
 
-const pool = await mysql.createConnection(config)
+const pool = await mysql.createConnection(configgg)
 
 const { validateSignUpInput } = sesionUsersSchema();
 

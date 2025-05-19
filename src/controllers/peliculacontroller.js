@@ -50,6 +50,22 @@ export const getPeliculaPorId = async (req, res) => {
   }
 };
 
+export const getPeliculasPorIds = async (req, res) => {
+  try {
+    const ids = req.body.favoritesFilms
+    const peliculas = await Pelicula.find({
+      _id: { $in: ids}
+    });
+    
+    if (!peliculas) {
+      return res.status(404).json({ mensaje: 'Película no encontrada' });
+    }
+    res.json(peliculas);
+  } catch (error) {
+    res.status(500).json({ mensaje: 'Error al obtener la película', error });
+  }
+};
+
 export const buscarPeliculaPorTitulo = async (req, res) => {
   const titulo = req.query.titulo;
   try {
