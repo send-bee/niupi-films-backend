@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI)
   
 app.use('/api/peliculas', peliculaRouter);
 
-// app.use(jwtMiddleware)
+app.use(jwtMiddleware)
 
 app.use("/portal-movies", fmoviesRouter);
 
