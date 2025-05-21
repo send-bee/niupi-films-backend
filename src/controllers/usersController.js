@@ -38,6 +38,7 @@ export class usersController {
           );
           res.cookie("access_token", token, {
             httpOnly: true,
+            maxAge: 1000 * 60 * 60 * 15,
             secure: process.env.NODE_ENV === 'production',
             sameSite: "None",
             path: "/"
@@ -71,6 +72,7 @@ export class usersController {
           );
           res.cookie("access_token", token, {
             httpOnly: true,
+            maxAge: 1000 * 60 * 60 * 15,
             secure: process.env.NODE_ENV === 'production',
             sameSite: "None",
             path: "/"
