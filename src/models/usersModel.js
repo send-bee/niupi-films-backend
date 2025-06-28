@@ -11,7 +11,7 @@ const config = {
 }
 
 
-const pool = await mysql.createConnection(config)
+const pool = mysql.createPool(config)
 
 const { validateSignUpInput } = sesionUsersSchema();
 
